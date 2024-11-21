@@ -5,7 +5,7 @@ export default {
     postcssPresetEnv({
       stage: 3,
       features: {
-        "logical-properties-and-values": FALSE,
+        "logical-properties-and-values": false,
         "text-decoration-shorthand": true,
       },
     }),
