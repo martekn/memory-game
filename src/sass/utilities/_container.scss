@@ -7,14 +7,6 @@
   width: min(100% - var(--padding), var(--max-width));
   margin-inline: auto;
 
-  &-narrow {
-    --max-width: #{$container-max-width-narrow};
-  }
-
-  &-wide {
-    --max-width: #{$container-max-width-wide};
-  }
-
   &-full-bleed {
     --max-width: 100%;
     --padding: 0px;

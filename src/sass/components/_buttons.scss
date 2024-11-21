@@ -15,16 +15,6 @@
   border-radius: $button-border-radius;
   transition: 275ms ease;
 
-  &-accent {
-    background-color: $button-accent-background;
-    color: $button-accent-color;
-
-    &:is(:hover, :focus) {
-      background-color: $button-accent-background-hover;
-      color: $button-accent-color-hover;
-    }
-  }
-
   &-primary {
     background-color: $button-primary-background;
     color: $button-primary-color;
