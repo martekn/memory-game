@@ -1,0 +1,35 @@
+.round {
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+
+  img {
+    object-fit: cover;
+  }
+
+  &-top {
+    border-top-right-radius: 100vw;
+    border-top-left-radius: 100vw;
+
+    &-right {
+      border-top-right-radius: 100vw;
+    }
+
+    &-left {
+      border-top-left-radius: 100vw;
+    }
+  }
+
+  &-bottom {
+    border-bottom-right-radius: 100vw;
+    border-bottom-left-radius: 100vw;
+
+    &-right {
+      border-bottom-right-radius: 100vw;
+    }
+
+    &-left {
+      border-bottom-left-radius: 100vw;
+    }
+  }
+}

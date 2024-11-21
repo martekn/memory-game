@@ -1,0 +1,51 @@
+@use "../abstracts" as *;
+
+:root {
+  // Themes
+  @each $color, $shade-map in $default-theme {
+    @each $shade, $value in $shade-map {
+      --#{$color}-#{$shade}: #{$value};
+    }
+  }
+
+  @if ($enable-media-query-dark-mode) {
+    @media (prefers-color-scheme: dark) {
+      @each $color, $shade-map in $dark {
+        @each $shade, $value in $shade-map {
+          --#{$color}-#{$shade}: #{$value};
+        }
+      }
+    }
+  }
+
+  body[data-theme="light"] {
+    @each $color, $shade-map in $light {
+      @each $shade, $value in $shade-map {
+        --#{$color}-#{$shade}: #{$value};
+      }
+    }
+  }
+
+  body[data-theme="dark"] {
+    @each $color, $shade-map in $dark {
+      @each $shade, $value in $shade-map {
+        --#{$color}-#{$shade}: #{$value};
+      }
+    }
+  }
+
+  // Font sizes
+  @each $screen-size, $size-map in $font-sizes {
+    @if $screen-size == sm {
+      @each $size-name, $size-value in $size-map {
+        --fs-#{$size-name}: #{$size-value};
+      }
+    } @else {
+      @include mq($screen-size) {
+        @each $size-name, $size-value in $size-map {
+          --fs-#{$size-name}: #{$size-value};
+        }
+      }
+    }
+  }
+}

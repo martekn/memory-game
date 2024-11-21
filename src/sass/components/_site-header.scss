@@ -1,0 +1,16 @@
+@use "../abstracts" as *;
+
+.site-header {
+  background-color: $site-header-background-color;
+  color: $site-header-color;
+  padding: $site-header-padding;
+  margin: $site-header-margin;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: $size-4;
+  }
+}

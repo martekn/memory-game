@@ -1,0 +1,56 @@
+@use "sass:meta";
+@use "sass:math";
+@use "sass:map";
+@use "breakpoints" as *;
+@use "tokens" as *;
+
+@mixin mq($size, $mediaFeature: "min-width") {
+  @if map.has-key($breakpoints, $size) {
+    $breakpoint: map.get($breakpoints, $size);
+    @media screen and (#{$mediaFeature}: $breakpoint) {
+      @content;
+    }
+  } @else if meta.type-of($size) == number {
+    @if math.is-unitless($size) {
+      @error 'when using a number with @mq() make sure to include a unit';
+    } @else {
+      @media screen and (min-width: $size) {
+        @content;
+      }
+    }
+  } @else {
+    @error 'the keyword #{$size} is not in the $breakpoints map';
+  }
+}
+
+@mixin heading($fs, $color: $heading-color-default) {
+  font-size: $fs;
+  color: $color;
+
+  font-family: $heading-font-family;
+  text-transform: $heading-text-transform;
+  letter-spacing: $heading-letter-spacing;
+  font-weight: $heading-font-weight;
+  line-height: $heading-line-height;
+}
+
+@mixin section-bleed($position: "full", $padding-top: 0px, $padding-bottom: 0px) {
+  img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @if ($position == "top") {
+    margin-top: calc($section-padding-block * -1);
+  } @else if ($position == "bottom") {
+    margin-bottom: calc($section-padding-block * -1);
+  } @else if ($position == "full") {
+    height: calc((100% + $section-padding-block * 2) - $padding-top - $padding-bottom);
+
+    margin-bottom: calc($section-padding-block * -1);
+    margin-top: calc($section-padding-block * -1);
+    transform: translateY(calc(($padding-top * 0.5) + ($padding-bottom * -0.5)));
+  } @else {
+    @error 'If passing in a position value, it has to be one of the following values: "bottom", "top" or "full"';
+  }
+}
