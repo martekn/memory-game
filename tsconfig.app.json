@@ -29,6 +29,8 @@
       "@assets/*": ["./src/assets/*"],
       "@utils/*": ["./src/utils/*"],
       "@hooks/*": ["./src/hooks/*"],
+      "@context/*": ["./src/context/*"],
+      "@provider/*": ["./src/provider/*"],
       "@sass/*": ["./src/sass/*"]
     }
   },
