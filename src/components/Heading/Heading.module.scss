@@ -1,0 +1,9 @@
+@use "@sass/abstracts/" as *;
+
+.heading1 {
+  @include heading($heading-1-font-size, $heading-1-color);
+}
+
+.heading2 {
+  @include heading($heading-2-font-size, $heading-2-color);
+}

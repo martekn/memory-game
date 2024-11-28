@@ -1,0 +1,56 @@
+@use "@sass/abstracts/" as *;
+
+.container {
+  --size: 10px;
+  position: absolute;
+  margin: var(--size);
+
+  &.topRight,
+  &.bottomLeft {
+    right: 0;
+  }
+  &.bottomRight,
+  &.bottomLeft {
+    bottom: 0;
+  }
+}
+
+.triangle {
+  top: calc(0px - var(--size));
+  left: calc(0px - var(--size));
+
+  &,
+  &::before,
+  &::after {
+    border: var(--size) solid transparent;
+    border-bottom-color: $color-primary-300;
+    display: block;
+    position: absolute;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+  }
+
+  &::before {
+    left: 0;
+  }
+
+  &::after {
+    right: 0;
+  }
+
+  .topRight & {
+    transform: rotate(45deg);
+  }
+  .topLeft & {
+    transform: rotate(-45deg);
+  }
+  .bottomRight & {
+    transform: rotate(-135deg);
+  }
+  .bottomLeft & {
+    transform: rotate(135deg);
+  }
+}

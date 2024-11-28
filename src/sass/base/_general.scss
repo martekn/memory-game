@@ -1,14 +1,20 @@
 @use "../abstracts/" as *;
 
-body {
+#root {
   font-family: $body-font-family;
   font-weight: $body-font-weight;
   font-size: $body-font-size;
   line-height: $body-line-height;
   color: $body-text-color;
   background-color: $body-background-color;
+  background-image: $body-background-image;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   min-height: 100vh;
   height: 100%;
+  display: grid;
+  place-items: center;
 }
 
 a {

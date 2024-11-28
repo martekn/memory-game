@@ -6,7 +6,7 @@ $default-theme: $default;
 $enable-media-query-dark-mode: false;
 
 // #region Contextual
-$color-text-default: $color-neutral-100;
+$color-text-default: $color-primary-300;
 $color-background-default: $color-neutral-700;
 $color-text-interactive-default: $color-primary-300;
 $color-text-interactive-hover: $color-primary-400;
@@ -30,7 +30,7 @@ $body-line-height: 1.5;
 $body-font-weight: $font-weight-regular;
 $body-text-color: $color-text-default;
 $body-background-color: $color-background-default;
-$body-background-image: url("/images/background.jpg");
+$body-background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/background.jpg");
 
 $link-color: $color-text-interactive-default;
 $link-text-decoration: underline $link-color;
@@ -57,7 +57,7 @@ $flex-group-gap: $size-4;
 $section-padding-block: $size-10;
 
 $container-min-margin-inline: $size-4;
-$container-max-width: 64rem;
+$container-max-width: 80rem;
 $container-max-width__inner: 40rem;
 // #endregion
 
@@ -68,7 +68,8 @@ $button-font-weight: $body-font-weight;
 $button-text-transform: none;
 $button-padding: 0.75em 2em;
 $button-border: 0;
-$button-border-radius: $border-radius-1;
+$button-border-radius: none;
+$button-box-shadow: $box-shadow-1;
 
 $button-primary-color: $color-neutral-700;
 $button-primary-background: $color-primary-300;
@@ -85,10 +86,14 @@ $card-background-default: $color-primary-300;
 // #endregion
 
 // #region game container
-$game-container-background: $color-neutral-700;
-$game-container-pattern: url("/images/pattern.jpg");
-$game-container-border-outer: 1px solid $color-primary-300;
-$game-container-border-inner: 2px solid $color-primary-300;
-$game-container-shadow-outer: $box-shadow-1;
-$game-container-shadow-inner: $box-shadow-inner;
+$game-body-background: $color-neutral-700;
+$game-body-pattern: url("/images/pattern.jpg");
+$game-body-border-outer: 1px solid $color-primary-300;
+$game-body-border-inner: 2px solid $color-primary-300;
+$game-body-shadow-outer: $box-shadow-1;
+$game-body-shadow-inner: $box-shadow-inner;
+$game-body-outer-margin: $size-10 0;
+$game-body-outer-padding: $size-4;
+$game-body-content-padding: $size-14;
+
 // #endregion
