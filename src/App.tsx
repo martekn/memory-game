@@ -1,9 +1,12 @@
+import { Game } from "@/components/Game/";
 import { GameProvider } from "./provider/GameProvider";
 
 const App = () => {
   return (
     <>
-      <GameProvider></GameProvider>
+      <GameProvider>
+        <Game />
+      </GameProvider>
     </>
   );
 };

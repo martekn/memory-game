@@ -1,0 +1,86 @@
+@use "@sass/abstracts" as *;
+
+.gameBody {
+  background-color: $game-body-background;
+  border: $game-body-border-outer;
+  box-shadow: $game-body-shadow-outer;
+  padding: $game-body-outer-padding;
+  margin: $game-body-outer-margin;
+
+  .inner {
+    background-image: $game-body-pattern;
+    border: $game-body-border-inner;
+    box-shadow: $game-body-shadow-inner;
+
+    position: relative;
+  }
+
+  .content {
+    display: grid;
+    place-items: center;
+    min-height: 60vh;
+    position: relative;
+    margin: $size-10;
+
+    @include mq(lg) {
+      padding: $game-body-content-padding;
+    }
+  }
+}
+
+.gameDisplay {
+  width: 100%;
+  display: grid;
+  gap: $grid-gap;
+
+  > :nth-child(1) {
+    width: 100%;
+    justify-content: space-between;
+    align-items: end;
+  }
+
+  .header {
+    position: absolute;
+    top: $size-5;
+  }
+
+  [data-game="MENU"] &,
+  [data-game="GAME_OVER"] & {
+    place-items: center;
+    text-align: center;
+    max-width: 55ch;
+    --flow-spacer: #{$size-4};
+  }
+
+  [data-game="IN_PROGRESS"] & {
+    .cardContainer {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: $size-4;
+
+      @include mq(sm) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      @include mq(md) {
+        grid-template-columns: repeat(6, 1fr);
+      }
+    }
+  }
+}
+
+.card {
+  padding: $card-padding;
+  background-color: $card-background-default;
+  box-shadow: $card-shadow;
+  border-radius: $card-border-radius;
+  border: $card-border;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
