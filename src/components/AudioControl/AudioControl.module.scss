@@ -1,0 +1,98 @@
+@use "@sass/abstracts" as *;
+
+.container {
+  --flow-spacer: #{$size-3};
+  position: absolute;
+  left: $size-5;
+  bottom: $size-3;
+  color: $color-neutral-100;
+
+  audio {
+    display: none;
+  }
+
+  @mixin track() {
+    width: $audio-track-width;
+    height: $audio-track-height;
+    cursor: pointer;
+  }
+
+  @mixin thumb() {
+    border: $audio-thumb-border-width solid $audio-thumb-border-color;
+    height: $audio-thumb-height;
+    width: $audio-thumb-width;
+    border-radius: $audio-thumb-radius;
+    background: $audio-thumb-color;
+    cursor: pointer;
+  }
+
+  input[type="range"] {
+    appearance: none;
+    -webkit-appearance: none;
+    margin: $audio-thumb-height/2 0;
+    width: $audio-track-width;
+    background: transparent;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::-webkit-slider-runnable-track {
+      @include track();
+
+      background: $audio-track-color;
+      border-radius: $audio-track-radius;
+      border: $audio-track-border-width solid $audio-track-border-color;
+    }
+
+    &::-webkit-slider-thumb {
+      @include thumb();
+      -webkit-appearance: none;
+      margin-top: ((-$audio-track-border-width * 2 + $audio-track-height) / 2) - ($audio-thumb-height / 2);
+    }
+
+    &:focus::-webkit-slider-runnable-track {
+      background: $audio-track-color;
+    }
+
+    &::-moz-range-track {
+      @include track();
+
+      background: $audio-track-color;
+      border-radius: $audio-track-radius;
+      border: $audio-track-border-width solid $audio-track-border-color;
+    }
+
+    &::-moz-range-thumb {
+      @include thumb();
+    }
+
+    &::-ms-track {
+      @include track();
+      background: transparent;
+      border-color: transparent;
+      border-width: $audio-thumb-width 0;
+      color: transparent;
+    }
+
+    &::-ms-fill-lower {
+      background: $audio-track-color;
+      border: $audio-track-border-width solid $audio-track-border-color;
+      border-radius: $audio-track-radius * 2;
+    }
+    &::-ms-fill-upper {
+      background: $audio-track-color;
+      border: $audio-track-border-width solid $audio-track-border-color;
+      border-radius: $audio-track-radius * 2;
+    }
+    &::-ms-thumb {
+      @include thumb();
+    }
+    &:focus::-ms-fill-lower {
+      background: $audio-track-color;
+    }
+    &:focus::-ms-fill-upper {
+      background: $audio-track-color;
+    }
+  }
+}

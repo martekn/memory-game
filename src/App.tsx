@@ -1,5 +1,6 @@
-import { Game } from "@/components/Game/";
+import { Game } from "@components/Game/";
 import { GameProvider } from "./provider/GameProvider";
+import { AudioControl } from "@components/AudioControl";
 
 const App = () => {
   return (
@@ -7,6 +8,7 @@ const App = () => {
       <GameProvider>
         <Game />
       </GameProvider>
+      <AudioControl />
     </>
   );
 };

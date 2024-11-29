@@ -97,3 +97,20 @@ $game-body-outer-padding: $size-4;
 $game-body-content-padding: $size-14;
 
 // #endregion
+
+// #region Audio track bar
+$audio-track-color: $color-primary-400;
+$audio-thumb-color: $color-neutral-100;
+
+$audio-thumb-radius: 0;
+$audio-thumb-height: 16px;
+$audio-thumb-width: 8px;
+$audio-thumb-border-width: 1px;
+$audio-thumb-border-color: $color-neutral-700;
+
+$audio-track-width: 100%;
+$audio-track-height: 8px;
+$audio-track-border-width: 1px;
+$audio-track-border-color: $color-neutral-700;
+$audio-track-radius: 0px;
+// #endregion
