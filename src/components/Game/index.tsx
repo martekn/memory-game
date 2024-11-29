@@ -199,7 +199,7 @@ const GameCardGrid = () => {
   }
 
   if (error) {
-    <div>An error has occurred, please try again later</div>;
+    return <div>An error has occurred, please try again later</div>;
   }
 
   return (
