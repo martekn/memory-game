@@ -29,7 +29,7 @@
   input[type="range"] {
     appearance: none;
     -webkit-appearance: none;
-    margin: $audio-thumb-height/2 0;
+    margin: calc($audio-thumb-height / 2) 0;
     width: $audio-track-width;
     background: transparent;
 
@@ -48,7 +48,8 @@
     &::-webkit-slider-thumb {
       @include thumb();
       -webkit-appearance: none;
-      margin-top: ((-$audio-track-border-width * 2 + $audio-track-height) / 2) - ($audio-thumb-height / 2);
+      margin-top: calc(((0px - $audio-track-border-width) * 2 + $audio-track-height) / 2) -
+        calc($audio-thumb-height / 2);
     }
 
     &:focus::-webkit-slider-runnable-track {
